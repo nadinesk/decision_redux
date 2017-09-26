@@ -6,4 +6,4 @@ The app can be used here:
 
 https://secret-taiga-75554.herokuapp.com/
 
-![app image](nadinesk.github.io/images/Screen Shot 2017-09-25 at 10.44.36 PM.png)
+![app image](https://nadinesk.github.io/images/Screen%20Shot%202017-09-25%20at%2010.44.36%20PM.png)
