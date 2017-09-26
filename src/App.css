@@ -24,5 +24,10 @@
 }
 
 .con_list {
+  color: red;
+}
+
+.pro_list {
   color: blue;
 }
+

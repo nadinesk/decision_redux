@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { addProItem } from '../actions'
 import { bindActionCreators } from 'redux'
+import { Button, ButtonToolbar, Grid, Row, Col, Clearfix, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 
 
 class AddProItem extends Component {
@@ -9,6 +10,10 @@ class AddProItem extends Component {
 	constructor(props) {
 		super(props) 
 
+		this.state = {
+			weight: '', 
+			text: ''
+		}
 		 
 		this.handleTextChange = this.handleTextChange.bind(this)
 		 this.handleWeightChange = this.handleWeightChange.bind(this)
@@ -18,8 +23,6 @@ class AddProItem extends Component {
 	}
 
 	handleTextChange(event) {
-		
-
 		this.setState({
 			text: event.target.value, 		
 		})
@@ -35,9 +38,28 @@ class AddProItem extends Component {
 	handleSubmit(event) {
 		event.preventDefault() 
 	
-		this.props.addProItem(this.state.text, this.state.weight)
+		if ((this.state.text !== '') && (this.state.weight !== ''))  {
+			this.props.addProItem(this.state.text, this.state.weight)	
+			this.setState({
+			text: '',
+			weight: ''
+			})
+
+	
+		} else {
+			this.setState({
+			text: '',
+			weight: ''
+			})
+
+		}
 
 		event.target.reset()
+
+
+		
+
+		
 		
 
 	}
@@ -45,20 +67,23 @@ class AddProItem extends Component {
 	render() {
 		return (
 			<div> 
+				<h2> Pros </h2> 
 				<form onSubmit={this.handleSubmit} > 
 					
-
-					<input 				
+					
+					<FormControl 				
 						type="text"
 						name="text"
+						placeholder="Enter description"
 						onChange={this.handleTextChange}
-					/> 
-
-					<input 				
+					/> <br /> 
+					
+					<FormControl 				
 						type="number"
 						name="weight"
+						placeholder="Enter weight"
 						onChange={this.handleWeightChange}
-					/> 
+					/> <br/> 
 
 					<button type="submit"> Submit Pro Item </button> 
 				</form> 

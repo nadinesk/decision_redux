@@ -1,28 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Button, ButtonToolbar, Grid, Row, Col, Clearfix, FormGroup, FormControl, ControlLabel, Table } from 'react-bootstrap'
 
 
 
 const Item = ({ text, category, weight }) => (
-	<div> 
-	{(category === 'pro') ? (		
+	
+	
+	
+	<tbody>
+		{(category === 'pro') ? (	
+		<tr className="pro_list"> 
+			<td>{text}</td>
+			<td>{weight} </td>
+			<td>{category}</td> 
+		</tr> 
 		
-		<li> 
-			{text}
-			{weight} 
-			{category}
-		</li> 
+	) : (
+		<tr className="con_list"> 
+			<td>{text}</td>
+			<td>{weight} </td>
+			<td>{category}</td> 
+		</tr> 
+
+	)
 	
-	) : (		
-		<li className="con_list">
-			{text} 
-			{weight}
-			{category}
-		</li> 
-	
-	) 
-}
-</div> 	
+   }
+   </tbody>
+
+   
+
 	
 
 		

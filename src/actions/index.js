@@ -21,4 +21,14 @@ export const addConItem = (text, weight) => {
 }
 
 
+export const addQuestion= (question) => {
+	return {
+		type: 'ADD_QUESTION', 		
+		question
+	}
+}
+
+
+
+
 
